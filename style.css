@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Roboto&display=swap");
+
+* {
+  font-family: "roboto", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: 150ms;
+}
+body {
+  background-color: rgb(227, 234, 240);
+}
+a {
+  text-decoration: none;
+  color: crimson;
+}
+.boxShadow {
+  box-shadow: -1px 3px 13px -2px rgba(0, 0, 0, 0.26);
+  -webkit-box-shadow: -1px 3px 13px -2px rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: -1px 3px 13px -2px rgba(0, 0, 0, 0.26);
+}
+.container {
+  padding: 12px 100px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: crimson;
+}
+.navBrand {
+  font-size: 25px;
+}
+.navMenu {
+  font-size: 14px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.navMenu span {
+  padding-left: 20px;
+}
+
+/* hide hamburger menu */
+.menu-toogle {
+  display: none;
+}
+
+/* responsive breackpoint */
+
+/* tablet */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 12px 50px;
+  }
+  .navMenu {
+    width: 65%;
+  }
+}
+
+/* mobile phone */
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 12px 30px;
+  }
+  .navMenu {
+    display: none;
+  }
+  .showMenu {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .hideBrand {
+    display: none;
+  }
+
+  /* show hamburger Menu */
+  .menu-toogle {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 22px;
+    width: 28px;
+  }
+  .menu-toogle input {
+    position: absolute;
+    width: 29px;
+    height: 25px;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .menu-toogle span {
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #dc143c;
+    transition: ease-in 0.2s;
+  }
+
+  .menu-toogle span:nth-child(2) {
+    transform-origin: 0 0;
+  }
+  .menu-toogle span:nth-child(4) {
+    transform-origin: 0 100%;
+  }
+  .menu-toogle input:checked ~ span:nth-child(2) {
+    z-index: -1;
+    transform: rotate(45deg) translate(4px, -3px);
+  }
+  .menu-toogle input:checked ~ span:nth-child(3) {
+    z-index: -1;
+    transform: scale(0);
+  }
+  .menu-toogle input:checked ~ span:nth-child(4) {
+    z-index: -1;
+    transform: rotate(-45deg) translate(2px, 4px);
+  }
+}
