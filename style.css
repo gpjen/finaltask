@@ -1,23 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@900&family=Roboto&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   transition: ease-in 150ms;
+  scroll-behavior: smooth;
 }
 
 body {
-  height: 100vh;
   width: 100vw;
-  font-family: "Poppins", sans-serif;
-  background-color: darkgray;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
   position: fixed;
   width: 100%;
-  padding: 15px 0;
+  padding: 10px 0;
+  z-index: 1;
 }
 nav {
   height: 40px;
@@ -31,11 +32,10 @@ nav {
   align-items: center;
   font-size: 25px;
   font-weight: 700;
-  color: white;
+  color: rgb(67, 67, 67);
   cursor: default;
-}
-.navBrand object {
-  margin-right: 5px;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
 }
 .navMenu {
   display: flex;
@@ -43,62 +43,178 @@ nav {
   width: 100%;
   font-size: 14px;
   font-weight: bold;
-  color: white;
 }
-.navMenu div {
-  padding: 10px 15px;
+.btnMenu {
+  height: 35px;
   display: inline;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.navMenu div a {
-  color: white;
+.btnMenu a {
+  margin: 0 2px;
+  padding: 10px 15px;
+  color: rgb(67, 67, 67);
   text-decoration: none;
-  transition: ease-in 150ms;
+}
+.active {
+  color: white !important;
 }
 .active,
-.navMenu div a:hover {
-  border-radius: 5px;
+.btnMenu:hover {
+  color: white;
   background-color: crimson;
-  padding: 8px 15px;
+  border-radius: 5px;
 }
-.container {
+.container,
+.containerNav {
   padding: 15px 10%;
 }
+
 .toogle {
   display: none;
 }
 
 main {
   display: flex;
+  flex-direction: column;
   width: 100%;
-  height: 100%;
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 main .content {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  padding-top: 120px;
+  overflow: hidden;
   flex: none;
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100%;
   width: 100%;
   scroll-snap-align: start;
+  color: rgb(67, 67, 67);
 }
 
 .content:nth-child(1) {
-  background-color: rgb(128, 95, 102);
+  background-color: white;
+  background-image: url("./assets/img/shadowBackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
+.content:nth-child(1) h1 {
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+.content:nth-child(1) p {
+  padding-left: 10%;
+  padding-right: 10%;
+  letter-spacing: 1px;
+  line-height: 30px;
+  margin-bottom: 12px;
+  color: rgb(133, 133, 133);
+}
+
 .content:nth-child(2) {
-  background-color: rgb(125, 76, 86);
+  background-color: white;
 }
 .content:nth-child(3) {
-  background-color: rgb(147, 74, 88);
+  background-color: rgb(219, 79, 107);
 }
 .content:nth-child(4) {
-  background-color: rgb(219, 79, 107);
+  background-color: rgb(219, 121, 79);
 }
 .content:nth-child(5) {
   background-color: rgb(33, 32, 32);
+}
+
+.butonHomePage {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.butonHomePage button {
+  z-index: 1;
+  margin: 10px;
+  height: 50px;
+  width: 250px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
   color: white;
+  background-color: crimson;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.butonHomePage button:nth-child(2) {
+  color: rgb(67, 67, 67);
+  background-color: white;
+}
+.butonHomePage button:nth-child(2):hover {
+  color: white;
+  background-color: crimson;
+}
+.butonHomePage button:hover {
+  background-color: rgb(185, 37, 67);
+}
+.butonHomePage button:active {
+  opacity: 0.8;
+}
+
+.handImgRight,
+.handImgLeft {
+  position: absolute;
+  visibility: visible;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+  bottom: 0;
+  width: 40%;
+  height: 50%;
+}
+
+.handImgLeft {
+  background-image: url("./assets/img/hand1.png");
+  background-position: bottom left;
+  left: 0;
+}
+.handImgRight {
+  background-image: url("./assets/img/hand2.png");
+  background-position: bottom right;
+  right: 0;
+}
+.textCenter {
+  text-align: center;
+}
+
+.card {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+  width: 90%;
+  height: 90%;
+  border-radius: 10px;
+  overflow-y: auto !important;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.shadowMd {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 @media screen and (max-width: 950px) {
@@ -111,20 +227,24 @@ main .content {
 }
 
 /* mobile phone */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
   .navBrand {
     position: relative;
-    left: 0;
+    left: 35px;
   }
   .navMenu {
     display: none;
   }
   .toogle {
+    position: relative;
+    right: 35px;
+    top: 0px;
     height: 23px;
     width: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 1;
   }
   .toogle span {
     background-color: crimson;
@@ -157,5 +277,46 @@ main .content {
   .toogle input:checked ~ span:nth-child(4) {
     transform: rotate(-45deg) translate(4px, 4px);
     z-index: -1;
+  }
+  .containerNav {
+    padding: 0;
+  }
+  .container {
+    padding: 20px;
+  }
+  .showNavOnMobile {
+    scale: 100%;
+    padding: 10px 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    background-color: white;
+    color: crimson;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+  .active,
+  .btnMenu {
+    background-color: transparent;
+  }
+  .active,
+  .btnMenu:hover {
+    color: crimson !important;
+    background-color: transparent;
+    transform: scale(125%);
+  }
+  .btnMenu a {
+    padding: 0;
+    width: 100%;
+    color: rgb(67, 67, 67);
+  }
+  .butonHomePage {
+    flex-direction: column;
+  }
+  .butonHomePage button {
+    width: 100%;
+  }
+  .handImgLeft {
+    visibility: hidden;
   }
 }

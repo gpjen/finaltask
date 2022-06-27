@@ -21,18 +21,26 @@
   <body>
     <!-- navbar -->
     <header>
-      <div class="container">
+      <div class="containerNav">
         <nav>
-          <div class="navBrand">DONOR.ID</div>
+          <div class="navBrand">
+            DON
+            <object
+              data="./assets/img/donorLogo.svg"
+              type=""
+              width="30px"
+            ></object>
+            R
+          </div>
           <div class="navMenu">
-            <div><a class="active" href="#home">Home</a></div>
-            <div><a href="#info">Info</a></div>
-            <div><a href="#galery">Galery</a></div>
-            <div><a href="#contact">Contact</a></div>
-            <div><a href="#about">About Me</a></div>
+            <div class="btnMenu"><a class="active" href="#home">Home</a></div>
+            <div class="btnMenu"><a href="#info">Info</a></div>
+            <div class="btnMenu"><a href="#galery">Galery</a></div>
+            <div class="btnMenu"><a href="#contact">Contact</a></div>
+            <div class="btnMenu"><a href="#about">About Me</a></div>
           </div>
           <div class="toogle">
-            <input type="checkbox" />
+            <input id="isShow" type="checkbox" />
             <span></span>
             <span></span>
             <span></span>
@@ -44,20 +52,75 @@
     <!-- end navbar -->
 
     <main>
+      <!-- PAGE 1 -->
+
       <div id="home" class="content">
         <div class="container">
-          <h2>Lorem ipsum</h2>
-          <h1>HOME</h1>
-          doloicing elit.
+          <h1>GERAKAN AYO DONOR</h1>
+          <p>
+            Setiap 1 menit, ada 5-10 orang yang membutuhkan donor darah. Bersama
+            <b>DONOR.ID</b> mari kita bantu saudara-saudari kita yang
+            membutuhkan.
+          </p>
+          <div class="butonHomePage">
+            <button class="shadowMd">Download APP</button>
+            <button class="shadowMd">Login</button>
+          </div>
         </div>
+        <span class="handImgLeft"></span>
+        <span class="handImgRight"></span>
       </div>
+
+      <!-- END PAGE 1 -->
+
+      <!-- PAGE 2 -->
+
       <div id="info" class="content">
-        <div class="container">
-          <h2>Lorem ipsum dolor</h2>
-          <h1>INFO</h1>
-          sit aur adipisicing elit.
+        <div class="container card shadowMd">
+          <div class="">
+            <h3 class="textCenter">Kebijakan dan Layanan</h3>
+            <br />
+            <small><u>Diperbarui 27 juni 2022</u></small
+            ><br /><br />
+
+            <h4>Selamat datang di <b>DONOR.ID</b>!</h4>
+            <p>
+              Terimakasih telah menggunakan layanan kami, layanan ini didirikan
+              sejak 25 agustus 2019 di kota Ambon sebagai sarana untuk saling
+              membantu saudara-saudari kita yang membutuhkan bantuan penyaluran
+              darah melalui kami sebagai penyelenggara kemudian diserahkan
+              kepada pelayanan tenaga medis dalam kota maupun luar kota ambon.
+            </p>
+            <br /><br />
+
+            <h4>Penggunaan Layanan</h4>
+            <p>
+              Penggunaan terhadap layanan ini menunjukan ketersedian anda untuk memenuhi segala peraturan dan persyaratan yang telah di tentukan panitia dan pihak penyelenggara diantaranya :
+              <ul style="padding-left: 30px;">
+                <li>Sebelum melakukan donor darah peserta diharapkan mendaftar atau registrasi online melalu website donor.id</li>
+                <li>Peserta diwajibkan menjaga kesehatan juga pola makan minimal 2 minggu sebelum mekukan pengetesan darah</li>
+                <li>Peserta yang mendaftar belum tentu akan langsung melakukan pengetesan darah, peserta akan dihubungi panitia atau dapat pemberitahuan jadwal melalu kotak pesan pada halaman web atau aplikasi donation.id</li>
+                <li>Peserta diwajibkan datang sesuai jadwal dan tempat yang ditentukan panitia</li>
+                <li>Setelah dinyatakan lulus pengecekan administrasi dan kesehatan darah, peserta akan langsung diambil / melakukan proses pedonoran darah oleh petugas pelayanan</li>
+              </ul> <br><br>
+
+              <h4>Perubahan dan Pemberhentian Layanan</h4>
+              <p>
+                Segala bentuk penambahan dan pengurangan layanan dari penyelenggara merupakan kebijakan yang dapat berubah sewaktu-waktu tanpa adanya pemberitahuan terlebih dahulu.
+              </p><br>
+              <p>
+                Donation.id dapat menghentikan layanan secara sepihak kepada peserta yang menyalahi aturan dan terdapat penyalahgunaan pelayanan.
+              </p>
+              <p>
+                Pengguna dapat menghentikan layanan melalui halawan web atau aplikasi donor.id meskipun donation.id sangat menyayangkan hal tersebut.
+              </p>
+            </p>
+          </div>
         </div>
       </div>
+
+      <!-- END PAGE 2 -->
+
       <div id="galery" class="content">
         <div class="container">
           <h2>Lorem ipsum dolor</h2>
