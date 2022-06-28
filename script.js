@@ -1,20 +1,49 @@
 // nav active handler
 const showNavMenu = document.getElementById("isShow");
-const navBrand = document.getElementsByClassName("navBrand");
 const navMenu = document.querySelector(".navMenu");
 const btnMenu = document.querySelectorAll(".btnMenu a");
-const containerContent = document.querySelector("main");
-const content = document.querySelectorAll(".content");
+const mainContent = document.querySelector("main");
 
-navMenu.addEventListener("click", (e) => {
+const resetBtnMenu = () => {
   btnMenu.forEach((x) => {
     x.className = "btnMenu";
   });
-  e.target.classList.toggle("active");
+};
+
+const darkTheme = () => {};
+
+navMenu.addEventListener("click", (e) => {
+  if (e.target.parentElement.className == "btnMenu") {
+    resetBtnMenu();
+    e.target.classList.toggle("active");
+  }
 });
 
 showNavMenu.addEventListener("click", (e) => {
   navMenu.classList.toggle("showNavOnMobile");
 });
 
-containerContent.addEventListener("scroll", () => {});
+mainContent.addEventListener("scroll", () => {
+  let scrollY = Math.floor(mainContent.scrollTop);
+  const windowHight = window.innerHeight - 20;
+  let scrollX = Math.floor(mainContent.scrollLeft);
+  const windowWidth = window.innerWidth - 20;
+
+  if (scrollY > windowHight * 4 || scrollX > windowWidth * 4) {
+    resetBtnMenu();
+    darkTheme();
+    btnMenu[4].classList.toggle("active");
+  } else if (scrollY > windowHight * 3 || scrollX > windowWidth * 3) {
+    resetBtnMenu();
+    btnMenu[3].classList.toggle("active");
+  } else if (scrollY > windowHight * 2 || scrollX > windowWidth * 2) {
+    resetBtnMenu();
+    btnMenu[2].classList.toggle("active");
+  } else if (scrollY > windowHight || scrollX > windowWidth) {
+    resetBtnMenu();
+    btnMenu[1].classList.toggle("active");
+  } else if (scrollY < windowHight || scrollX < windowWidth) {
+    resetBtnMenu();
+    btnMenu[0].classList.toggle("active");
+  }
+});
