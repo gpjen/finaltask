@@ -155,7 +155,7 @@ main .content {
   background-color: white;
 }
 .content:nth-child(3) {
-  background-color: rgb(235, 222, 224);
+  background-color: #f1f7f6;
 }
 .content:nth-child(4) {
   background-color: white;
@@ -247,6 +247,7 @@ main .content {
   height: 90%;
   border-radius: 10px;
   overflow-y: auto !important;
+  background-color: white;
 }
 
 ::-webkit-scrollbar {
