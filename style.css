@@ -70,7 +70,7 @@ nav {
   color: white !important;
 }
 .active,
-.btnMenu:hover {
+.btnMenu:hover a {
   color: white;
   background-color: crimson;
   border-radius: 5px;
@@ -164,6 +164,56 @@ main .content {
   background-color: rgb(33, 32, 32);
 }
 
+.layanan-wrap {
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  /* border: 1px black solid; */
+  width: 80vw;
+  height: 65vh;
+}
+
+.cardLayanan {
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  width: 280px;
+  height: 230px;
+  background-color: white;
+  margin: 10px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+}
+
+.cardLayanan p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  color: rgb(67, 67, 67);
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  bottom: 10px;
+}
+
+.cardLayanan:nth-child(1) {
+  background-image: url("./assets/services/why-event.svg");
+}
+.cardLayanan:nth-child(2) {
+  background-image: url("./assets/services/why-info.svg");
+}
+.cardLayanan:nth-child(3) {
+  background-image: url("./assets/services/why-blood.svg");
+}
+.cardLayanan:nth-child(4) {
+  background-image: url("./assets/services/why-donate.svg");
+}
+
 .suportLogo {
   margin: 80px 0 30px 0;
   width: 100%;
@@ -255,6 +305,10 @@ main .content {
 }
 .shadowMd {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.shadowLg {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 .galeryWrap {
   width: 80%;
@@ -356,6 +410,9 @@ main .content {
     height: 18vw;
     width: 18vw;
   }
+  .layanan-wrap {
+    width: 95vw;
+  }
 }
 
 /* mobile phone */
@@ -444,7 +501,7 @@ main .content {
     background-color: transparent;
   }
   .active,
-  .btnMenu:hover {
+  .btnMenu:hover a {
     color: crimson !important;
     background-color: transparent;
     transform: scale(120%);
@@ -484,5 +541,17 @@ main .content {
   }
   .imgContent .img-tittle {
     width: 100%;
+  }
+
+  .layanan-wrap {
+    position: relative;
+  }
+  .cardLayanan {
+    width: 95%;
+    background-size: 300px;
+    background-position: top center;
+  }
+  .cardLayanan p {
+    bottom: 0px;
   }
 }
