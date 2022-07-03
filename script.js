@@ -30,11 +30,6 @@ mainContent.addEventListener("scroll", () => {
   if (scrollY > windowHight * 4 || scrollX > windowWidth * 4) {
     resetBtnMenu();
     btnMenu[4].classList.toggle("active");
-
-    document.querySelector(".navBrand").style.color = "white";
-    document
-      .querySelectorAll(".btnMenu a")
-      .forEach((el) => (el.style.color = "white"));
   } else if (scrollY > windowHight * 3 || scrollX > windowWidth * 3) {
     resetBtnMenu();
     btnMenu[3].classList.toggle("active");
