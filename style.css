@@ -93,6 +93,7 @@ main {
   overflow-y: scroll;
 }
 footer {
+  z-index: -1;
   position: absolute;
   background-color: white;
   color: rgb(67, 67, 67);
@@ -103,6 +104,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.showFooter {
+  z-index: 11;
 }
 
 main .content {

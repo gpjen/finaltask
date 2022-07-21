@@ -30,17 +30,22 @@ mainContent.addEventListener("scroll", () => {
   if (scrollY > windowHight * 4 || scrollX > windowWidth * 4) {
     resetBtnMenu();
     btnMenu[4].classList.toggle("active");
+    document.querySelector("footer").classList = "showFooter";
   } else if (scrollY > windowHight * 3 || scrollX > windowWidth * 3) {
     resetBtnMenu();
     btnMenu[3].classList.toggle("active");
+    document.querySelector("footer").classList = "";
   } else if (scrollY > windowHight * 2 || scrollX > windowWidth * 2) {
     resetBtnMenu();
     btnMenu[2].classList.toggle("active");
+    document.querySelector("footer").classList = "";
   } else if (scrollY > windowHight || scrollX > windowWidth) {
     resetBtnMenu();
     btnMenu[1].classList.toggle("active");
+    document.querySelector("footer").classList = "";
   } else if (scrollY < windowHight || scrollX < windowWidth) {
     resetBtnMenu();
     btnMenu[0].classList.toggle("active");
+    document.querySelector("footer").classList = "";
   }
 });
